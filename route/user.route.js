@@ -41,7 +41,7 @@ UserRoute.post("/login", async(req,res)=>{
             return res.status(404).json({"msg":"Invalid Password"})
         }
 
-        const token = jwt.sign({userID: user._id}, process.env.jwtkey)
+        const token = jwt.sign({userID: user._id}, "yourSecretKeyHere")
         res.status(200).json({"msg":"Login Successfull","token":token})
     } catch (error) {
         console.log(error)
