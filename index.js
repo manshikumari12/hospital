@@ -9,12 +9,12 @@ app.use(express.json())
 app.use("/user",UserRoute)
 app.use("/api",AppointmentRouter)
 
-app.listen(process.env.PORT, async()=>{
+app.listen(1111, async()=>{
     try {
         await connection
         console.log("db is connected");
     } catch (error) {
         console.log(error);
     }
-    console.log(`server is running ${process.env.PORT}`);
+    console.log("server is running 1111");
 })
