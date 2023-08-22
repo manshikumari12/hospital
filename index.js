@@ -3,11 +3,12 @@ const app=express()
 const {connection} = require("./db")
 const {AppointmentRouter} =require("./route/appointment.route")
 const {UserRoute} = require("./route/user.route")
-app.use(express.json())
-app.get("/",(req,res)=>{
-    console.log("HOme page")
-})
+const cors = require("cors")
 
+
+app.use(express.json())
+
+app.use(cors())
 app.use("/user",UserRoute)
 app.use("/api",AppointmentRouter)
 
