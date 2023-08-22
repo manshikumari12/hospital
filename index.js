@@ -4,7 +4,9 @@ const {connection} = require("./db")
 const {AppointmentRouter} =require("./route/appointment.route")
 const {UserRoute} = require("./route/user.route")
 app.use(express.json())
-
+app.get("/",(req,res)=>{
+    console.log("HOme page")
+})
 
 app.use("/user",UserRoute)
 app.use("/api",AppointmentRouter)
